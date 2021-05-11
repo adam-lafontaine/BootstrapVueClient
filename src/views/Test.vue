@@ -24,7 +24,7 @@ const TestModule = namespace("test_module");
 export default class Test extends Vue
 {
     @TestModule.Getter(TestGet.GET_TEST_DATA) private state_test_data: any;
-    @TestModule.Action(TestAction.LOAD_TEST_DATA) private action_load_data;
+    @TestModule.Action(TestAction.LOAD_TEST_DATA) private action_load_data: any;
 
     private load_test_data(): void
     {
@@ -37,7 +37,11 @@ export default class Test extends Vue
     {
         const data = JSON.stringify(this.state_test_data);
 
-        document.getElementById("data-content").innerText = data;
+        let div = document.getElementById("data-content");
+        if(div)
+        {
+            div.innerText = data;
+        }
     }
 }
 </script>
