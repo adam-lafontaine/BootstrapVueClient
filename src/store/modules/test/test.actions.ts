@@ -7,7 +7,7 @@ import {
 
 } from './test.types';
 
-const ENTRY_ROUTE = "www.google.com";
+const ENTRY_ROUTE = "https://jsonplaceholder.typicode.com/todos/1";
 
 
 const actions: Tree<State, State> = {
